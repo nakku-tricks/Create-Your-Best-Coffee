@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TheHome from "./views/TheHome";
+import TheHome from "./views/ViewHome";
 export default {
   name: "App",
   components: {
@@ -19,7 +19,7 @@ export default {
   width: 100%;
   height: 100%;
 
-  padding: 48px 64px;
+  padding: 48px 64px 25px;
 
   background: #fcfcfc;
 }
