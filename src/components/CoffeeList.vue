@@ -17,8 +17,6 @@ export default {
 
 <style lang="scss">
 .coffee-list {
-  height: 90%;
-
   &__list {
     display: flex;
     justify-content: space-between;
