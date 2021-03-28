@@ -1,0 +1,7 @@
+{
+  "coffee": [
+    { "id": 1, "img": "", "title": "Капучино", "description": "Очень вкусный"},
+    { "id": 2, "img": "", "title": "Американо", "description": "Не вкусный"},
+    { "id": 3, "img": "", "title": "Латте", "description": "Средне вкусный"}
+  ]
+}
