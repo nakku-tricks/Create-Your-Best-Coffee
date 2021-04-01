@@ -2,14 +2,17 @@
   <li class="coffee-list-item">
     <article class="coffee-list-item__item">
       <div class="coffee-list-item__wrapper">
-        <img src="#" alt="1" class="coffee-list-item__img" />
+        <img
+          :src="require('../assets/img/' + coffee.img)"
+          alt="1"
+          class="coffee-list-item__img"
+        />
         <div class="coffee-list-item__description">
-          <h2 class="coffee-list-item__title">Title</h2>
+          <h2 class="coffee-list-item__title">{{ coffee.title }}</h2>
           <p class="coffee-list-item__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            hic animi saepe assumenda incidunt obcaecati?
+            {{ coffee.description }}
           </p>
-          <p class="coffee-list-item__price">199p</p>
+          <p class="coffee-list-item__price">{{ coffee.price }}</p>
         </div>
       </div>
       <button class="coffee-list-item__button">+</button>
@@ -18,7 +21,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    coffee: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
+  },
+};
 </script>
 
 <style lang="scss">

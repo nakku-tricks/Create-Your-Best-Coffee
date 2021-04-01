@@ -6,10 +6,10 @@
       </div>
       <div class="the-main__create-button">
         <p class="the-main__create-button-text">Создать свой!</p>
-        <button class="the-main__button" @click="log">+</button>
+        <button class="the-main__button">+</button>
       </div>
     </header>
-    <coffee-list></coffee-list>
+    <coffee-list :coffeeList="coffeeList"></coffee-list>
   </main>
 </template>
 
@@ -19,10 +19,13 @@ export default {
   components: {
     CoffeeList,
   },
-  methods: {
-    log() {
-      console.log("Its work");
-    },
+  mounted() {
+    this.$store.dispatch("getCoffeeList");
+  },
+  computed: {
+    coffeeList() {
+      return this.$store.state.Coffees.coffee;
+    }
   },
 };
 </script>

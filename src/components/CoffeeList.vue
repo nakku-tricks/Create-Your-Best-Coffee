@@ -1,7 +1,11 @@
 <template>
   <section class="coffee-list">
     <ul class="coffee-list__list">
-      <coffee-list-item></coffee-list-item>
+      <coffee-list-item
+        v-for="(coffee, idx) in coffeeList"
+        :key="idx"
+        :coffee="coffee"
+      ></coffee-list-item>
     </ul>
   </section>
 </template>
@@ -9,6 +13,14 @@
 <script>
 import CoffeeListItem from "./CoffeeListItem";
 export default {
+  props: {
+    coffeeList: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+  },
   components: {
     CoffeeListItem,
   },
