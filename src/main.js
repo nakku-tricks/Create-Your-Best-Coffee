@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import store from "./storage/store";
 
 import "./assets/styles/index.scss";
 
@@ -9,4 +10,5 @@ new Vue({
   render: function (h) {
     return h(App);
   },
+  store,
 }).$mount("#app");
