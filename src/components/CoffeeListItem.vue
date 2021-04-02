@@ -2,11 +2,12 @@
   <li class="coffee-list-item">
     <article class="coffee-list-item__item">
       <div class="coffee-list-item__wrapper">
-        <img
-          :src="require('../assets/img/' + coffee.img)"
-          alt="1"
-          class="coffee-list-item__img"
-        />
+        <div class="coffee-list-item__img">
+          <img
+            :src="require('../assets/img/' + coffee.img)"
+            :alt="`Изображение кофе ${coffee.title}`"
+          />
+        </div>
         <div class="coffee-list-item__description">
           <h2 class="coffee-list-item__title">{{ coffee.title }}</h2>
           <p class="coffee-list-item__text">
@@ -36,10 +37,8 @@ export default {
 <style lang="scss">
 .coffee-list-item {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 
-  width: calc(33.333% - 32px);
+  width: calc(50% - 32px);
 
   margin-bottom: 32px;
 
@@ -50,13 +49,11 @@ export default {
 
   &__item {
     display: flex;
-    flex-direction: column;
 
     position: relative;
 
     width: 100%;
-
-    padding: 24px 10px 10px 32px;
+    min-height: 250px;
 
     background: #fcfcfc;
     border-radius: 30px;
@@ -65,24 +62,29 @@ export default {
   }
 
   &__img {
-    width: 88px;
-    height: 88px;
 
     margin-right: 24px;
   }
 
   &__description {
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
+    text-transform: uppercase;
     margin-bottom: 12px;
   }
 
   &__text {
+    font-size: 18px;
     margin-bottom: 10px;
   }
 
   &__price {
+    align-self: flex-end;
+    margin-right: 40px;
+    font-size: 24px;
   }
 
   &__button {

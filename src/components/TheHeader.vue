@@ -1,15 +1,28 @@
 <template>
   <header class="the-header">
-    <img class="the-header__logo" src="#" alt="Логотип кофейни" />
+    <div class="the-header__logo">
+      <svg class="the-header__logo-img">
+        <use xlink:href="../assets/img/sprite.svg#icon-logo"></use>
+      </svg>
+      <p class="the-header__logo-text">
+        Создай <br />
+        свой <br />
+        лучший кофе!
+      </p>
+    </div>
+
     <div class="the-header__account">
-      <img src="#" alt="Корзина товаров" class="the-header__account-basket" />
+      <svg class="the-header__account-basket">
+        <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
+      </svg>
       <div class="the-header__login">
         <p class="the-header__login-name">Bessie Cooper</p>
-        <img
-          class="the-header__login-img"
-          src="#"
-          alt="Фотография пользователя"
-        />
+        <div class="the-header__login-img">
+          <img
+            src="../assets/img/User-avatar.jpg"
+            alt="Фотография пользователя"
+          />
+        </div>
       </div>
     </div>
   </header>
@@ -28,10 +41,21 @@ export default {};
   height: 56px;
 
   margin-bottom: 40px;
+  padding: 0 30px;
 
   &__logo {
-    width: 170px;
-    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+  }
+
+  &__logo-text {
+    text-transform: uppercase;
   }
 
   &__account {
@@ -40,7 +64,10 @@ export default {};
   }
 
   &__account-basket {
-    margin-right: 56px;
+    width: 60px;
+    height: 60px;
+
+    margin-right: 20px;
   }
 
   &__login {
@@ -53,6 +80,11 @@ export default {};
   }
 
   &__login-img {
+    width: 70px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
   }
 }
 </style>
