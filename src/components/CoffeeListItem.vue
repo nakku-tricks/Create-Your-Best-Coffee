@@ -62,7 +62,6 @@ export default {
   }
 
   &__img {
-
     margin-right: 24px;
   }
 

@@ -38,10 +38,7 @@ export default {};
   justify-content: space-between;
   align-items: center;
 
-  height: 56px;
-
-  margin-bottom: 40px;
-  padding: 0 30px;
+  height: 10%;
 
   &__logo {
     display: flex;
