@@ -5,7 +5,7 @@ export default {
   },
   actions: {
     async getCoffeeList({ commit }) {
-      fetch(API_URL)
+      fetch(`${API_URL}/coffee`)
         .then((value) => value.json())
         .then((value) => commit("setCoffeeToState", value))
         .catch((error) => console.log(error));
