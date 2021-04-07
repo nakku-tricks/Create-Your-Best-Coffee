@@ -5,6 +5,7 @@
         v-for="(coffee, idx) in coffeeList"
         :key="idx"
         :coffee="coffee"
+        @addToCart="addToCart"
       ></coffee-list-item>
     </ul>
   </section>
@@ -13,6 +14,9 @@
 <script>
 import CoffeeListItem from "./CoffeeListItem";
 export default {
+  components: {
+    CoffeeListItem,
+  },
   props: {
     coffeeList: {
       type: Array,
@@ -21,8 +25,10 @@ export default {
       },
     },
   },
-  components: {
-    CoffeeListItem,
+  methods: {
+    addToCart(value) {
+      this.$emit("addToCart", value);
+    },
   },
 };
 </script>

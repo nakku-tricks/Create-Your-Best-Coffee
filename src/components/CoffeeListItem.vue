@@ -16,7 +16,11 @@
           <p class="coffee-list-item__price">{{ coffee.price }}</p>
         </div>
       </div>
-      <button class="coffee-list-item__button">+</button>
+      <button class="coffee-list-item__button" @click="addToCart">
+        <svg class="coffee-list-item__button-logo">
+          <use xlink:href="../assets/img/sprite.svg#icon-button"></use>
+        </svg>
+      </button>
     </article>
   </li>
 </template>
@@ -29,6 +33,11 @@ export default {
       default: () => {
         return {};
       },
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$emit("addToCart", this.coffee);
     },
   },
 };
@@ -88,15 +97,21 @@ export default {
 
   &__button {
     position: absolute;
-    right: -9px;
-    bottom: -9px;
-    width: 38px;
-    height: 38px;
-    font-size: 24px;
-    background-color: #4959ff;
-    color: #f3f4f7;
+    right: -20px;
+    bottom: -15px;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: transparent;
     border: none;
-    border-radius: 16px;
+
+    cursor: pointer;
+  }
+
+  &__button-logo {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
