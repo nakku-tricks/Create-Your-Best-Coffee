@@ -1,20 +1,31 @@
 <template>
   <header class="the-header">
     <div class="the-header__logo">
-      <svg class="the-header__logo-img">
-        <use xlink:href="../assets/img/sprite.svg#icon-logo"></use>
-      </svg>
-      <p class="the-header__logo-text">
-        Создай <br />
-        свой <br />
-        лучший кофе!
-      </p>
+      <router-link
+        class="the-header__logo-wrapper"
+        :to="{ name: 'coffeeList' }"
+      >
+        <svg class="the-header__logo-img">
+          <use xlink:href="../assets/img/sprite.svg#icon-logo"></use>
+        </svg>
+        <p class="the-header__logo-text">
+          Создай <br />
+          свой <br />
+          лучший кофе!
+        </p>
+      </router-link>
     </div>
-
-    <div class="the-header__account">
-      <svg class="the-header__account-basket">
-        <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
+    <div class="the-header__create-coffee">
+      <svg class="the-header__create-logo">
+        <use xlink:href="../assets/img/sprite.svg#icon-create-coffee"></use>
       </svg>
+    </div>
+    <div class="the-header__account">
+      <router-link class="the-header__cart" :to="{ name: 'cart' }">
+        <svg class="the-header__cart-icon">
+          <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
+        </svg>
+      </router-link>
       <div class="the-header__login">
         <p class="the-header__login-name">Bessie Cooper</p>
         <div class="the-header__login-img">
@@ -45,6 +56,11 @@ export default {};
     align-items: center;
   }
 
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   &__logo-img {
     width: 60px;
     height: 60px;
@@ -55,12 +71,16 @@ export default {};
     text-transform: uppercase;
   }
 
+  &__create-logo {
+    width: 70px;
+  }
+
   &__account {
     display: flex;
     align-items: center;
   }
 
-  &__account-basket {
+  &__cart-icon {
     width: 60px;
     height: 60px;
 
