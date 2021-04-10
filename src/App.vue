@@ -28,6 +28,6 @@ export default {
 
   padding: 0 35px;
 
-  background: #fcfcfc;
+  background: #ffffff;
 }
 </style>
