@@ -22,24 +22,24 @@ export default {
     },
   },
   methods: {
-    addToCart(value) {
+    addToCart(coffeeItem) {
       if (this.cartList.length) {
         let isExist = false;
         this.cartList.map((elem) => {
-          if (elem.id === value.id) {
+          if (elem.id === coffeeItem.id) {
             isExist = true;
             elem.amount++;
           }
         });
         if (!isExist) {
-          value.amount = 1;
-          this.cartList.push(value);
+          coffeeItem.amount = 1;
+          this.cartList.push(coffeeItem);
         }
       } else {
-        value.amount = 1;
-        this.cartList.push(value);
+        coffeeItem.amount = 1;
+        this.cartList.push(coffeeItem);
       }
-      this.$store.dispatch("addCoffeeToCart", this.cartList);
+      this.$store.dispatch("addCoffeeToCart", coffeeItem);
     },
   },
 };
