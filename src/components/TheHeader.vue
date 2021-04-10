@@ -3,7 +3,8 @@
     <div class="the-header__logo">
       <router-link
         class="the-header__logo-wrapper"
-        :to="{ name: 'coffeeList' }"
+        :to="{ name: 'createCoffee' }"
+        v-if="this.$route.name === 'coffeeList'"
       >
         <svg class="the-header__logo-img">
           <use xlink:href="../assets/img/sprite.svg#icon-logo"></use>
@@ -14,14 +15,29 @@
           лучший кофе!
         </p>
       </router-link>
-    </div>
-    <div class="the-header__create-coffee">
-      <svg class="the-header__create-logo">
-        <use xlink:href="../assets/img/sprite.svg#icon-create-coffee"></use>
-      </svg>
+      <router-link
+        class="the-header__logo-wrapper"
+        :to="{ name: 'coffeeList' }"
+        v-if="
+          this.$route.name === 'createCoffee' || this.$route.path === '/Cart'
+        "
+      >
+        <svg class="the-header__create-logo">
+          <use xlink:href="../assets/img/sprite.svg#icon-create-coffee"></use>
+        </svg>
+        <p class="the-header__logo-text">
+          Хочу <br />
+          Купить <br />
+          ваш кофе!
+        </p>
+      </router-link>
     </div>
     <div class="the-header__account">
-      <router-link class="the-header__cart" :to="{ name: 'cart' }">
+      <router-link
+        class="the-header__cart"
+        :to="{ name: 'cart' }"
+        v-if="this.$route.name !== 'cart'"
+      >
         <svg class="the-header__cart-icon">
           <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
         </svg>
