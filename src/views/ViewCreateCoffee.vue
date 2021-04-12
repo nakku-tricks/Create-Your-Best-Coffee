@@ -1,7 +1,7 @@
 <template>
   <section class="view-create-coffee">
     <h1 class="view-create-coffee__title">Ваш конструктор:</h1>
-    <form class="view-create-coffee__form" @submit.prevent="checkForm">
+    <form class="view-create-coffee__form" @submit.prevent="submitForm">
       <ingredient-list
         :ingredientList="ingredientList"
         :choseIngredients="form.ingredients"
@@ -11,19 +11,19 @@
         <base-input
           placeholder="Название напитка"
           class="view-create-coffee__specification-input view-create-coffee__specification-title"
-          :value="form.inputTitle"
+          :value="form.title"
           @setValue="inputTitle"
         ></base-input>
         <base-input
           class="view-create-coffee__specification-input view-create-coffee__specification-name"
           disabled
-          :value="form.inputPrice"
+          :value="form.price"
           @setValue="inputPrice"
         ></base-input>
         <textarea
           class="view-create-coffee__specification-description"
           placeholder="Расскажите, как его приготовить"
-          v-model="form.inputDescription"
+          v-model="form.description"
         ></textarea>
         <button class="view-create-coffee__button">Приготовить!</button>
       </div>
@@ -42,10 +42,13 @@ export default {
   data() {
     return {
       form: {
-        inputPrice: "199p",
-        inputTitle: "",
-        inputDescription: "",
+        price: "199p",
+        title: "",
+        description: "",
         ingredients: [],
+        id: 10,
+        amount: 1,
+        img: "Espresso.jpg",
       },
     };
   },
@@ -58,11 +61,16 @@ export default {
     },
   },
   methods: {
+    submitForm() {
+      this.form.id++;
+      this.$store.dispatch("addCoffeeToCart", this.form);
+      this.$router.push({ name: "coffeeList" });
+    },
     inputPrice(value) {
-      return (this.form.inputPrice = value);
+      return (this.form.price = value);
     },
     inputTitle(value) {
-      return (this.form.inputTitle = value);
+      return (this.form.title = value);
     },
     setIngredients(value) {
       return (this.form.ingredients = value);
