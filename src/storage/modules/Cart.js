@@ -2,6 +2,7 @@ import { API_URL } from "@/constants";
 export default {
   state: {
     cart: JSON.parse(localStorage.getItem("cart") || "[]"),
+    amount: JSON.parse(localStorage.getItem("amount") || "0"),
   },
   actions: {
     addCoffeeToCart({ commit }, cartItem) {
@@ -9,6 +10,7 @@ export default {
     },
     removeItem({ commit }, idx) {
       commit("removeItem", idx);
+      commit("removeAmount");
     },
     postProductsToApi({ commit }, products) {
       fetch(`${API_URL}/cart`, {
@@ -37,16 +39,29 @@ export default {
       } else {
         cart.push(cartItem);
       }
-
+      state.amount++;
+      localStorage.setItem("amount", JSON.stringify(state.amount));
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeItem(state, idx) {
       state.cart.splice(idx, 1);
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
+    removeAmount(state) {
+      let amount = state.cart.reduce((sum, elem) => {
+        return sum + elem.amount;
+      }, 0);
+      state.amount = amount;
+      localStorage.setItem("amount", JSON.stringify(state.amount));
+    },
     postProductsToApi(state) {
       state.cart = [];
       localStorage.removeItem("cart");
+    },
+  },
+  getters: {
+    amountItemCart(state) {
+      return state.amount;
     },
   },
 };

@@ -41,6 +41,9 @@
         <svg class="the-header__cart-icon">
           <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
         </svg>
+        <span class="the-header__cart-item-count" v-if="amountItemCart !== 0">{{
+          amountItemCart
+        }}</span>
       </router-link>
       <div class="the-header__login">
         <p class="the-header__login-name">Bessie Cooper</p>
@@ -56,7 +59,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    amountItemCart() {
+      return this.$store.getters.amountItemCart;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -96,11 +105,23 @@ export default {};
     align-items: center;
   }
 
+  &__cart {
+    display: flex;
+
+    position: relative;
+  }
+
   &__cart-icon {
     width: 60px;
     height: 60px;
 
     margin-right: 20px;
+  }
+
+  &__cart-item-count {
+    position: absolute;
+    top: 7px;
+    left: 25px;
   }
 
   &__login {
