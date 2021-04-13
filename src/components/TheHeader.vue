@@ -79,6 +79,12 @@ export default {
   &__logo {
     display: flex;
     align-items: center;
+
+    transition: transform 300ms ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__logo-wrapper {
@@ -87,8 +93,8 @@ export default {
   }
 
   &__logo-img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     margin-right: 20px;
   }
 
@@ -98,6 +104,9 @@ export default {
 
   &__create-logo {
     width: 70px;
+    height: 70px;
+
+    margin-right: 20px;
   }
 
   &__account {
@@ -109,6 +118,12 @@ export default {
     display: flex;
 
     position: relative;
+
+    transition: transform 300ms ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__cart-icon {
@@ -120,7 +135,7 @@ export default {
 
   &__cart-item-count {
     position: absolute;
-    top: 7px;
+    bottom: 4px;
     left: 25px;
   }
 
