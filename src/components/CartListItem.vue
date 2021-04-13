@@ -2,12 +2,11 @@
   <li class="cart-list-item">
     <article class="cart-list-item__item">
       <div class="cart-list-item__wrapper">
-        <div class="cart-list-item__img">
-          <img
-            :src="require('../assets/img/' + cartItem.img)"
-            :alt="`Изображение кофе ${cartItem.title}`"
-          />
-        </div>
+        <img
+          class="cart-list-item__img"
+          :src="require('../assets/img/' + cartItem.img)"
+          :alt="`Изображение кофе ${cartItem.title}`"
+        />
         <div class="cart-list-item__description">
           <h2 class="cart-list-item__title">{{ cartItem.title }}</h2>
           <p class="cart-list-item__text">
@@ -48,47 +47,62 @@ export default {
 <style lang="scss">
 .cart-list-item {
   display: flex;
-
-  width: calc(50% - 32px);
-
-  margin-bottom: 32px;
+  width: calc(33.333% - 30px);
+  min-height: 500px;
+  margin: 0 15px;
+  margin-bottom: 30px;
 
   &__wrapper {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+
+    height: 100%;
   }
 
   &__item {
-    display: flex;
-
     position: relative;
 
-    width: 100%;
-    min-height: 250px;
-
     background: #fcfcfc;
+
     border-radius: 30px;
 
-    box-shadow: 0px 0px 10px 3px rgba(4, 139, 244, 0.16);
+    box-shadow: 0px 0px 10px 3px rgb(4 139 244 / 16%);
   }
 
   &__img {
-    margin-right: 24px;
+    margin-bottom: 15px;
+
+    border-radius: 30px 30px 0 0;
   }
 
   &__description {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+
+    padding: 0 15px;
+    margin-bottom: 10px;
   }
 
   &__title {
     text-transform: uppercase;
-    margin-bottom: 12px;
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    font-size: 30px;
   }
 
   &__text {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-size: 30px;
   }
 
   &__amount {
