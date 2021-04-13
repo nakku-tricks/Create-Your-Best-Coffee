@@ -30,13 +30,16 @@ export default {
         let isItemExist = false;
         cart.map((elem) => {
           if (elem.id === cartItem.id) {
+            elem.amount++;
             isItemExist = true;
           }
         });
         if (!isItemExist) {
+          cartItem.amount = 1;
           cart.push(cartItem);
         }
       } else {
+        cartItem.amount = 1;
         cart.push(cartItem);
       }
       state.amount++;
