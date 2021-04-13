@@ -59,7 +59,9 @@ export default {
     },
     postProductsToApi(state) {
       state.cart = [];
+      state.amount = 0;
       localStorage.removeItem("cart");
+      localStorage.removeItem("amount");
     },
   },
   getters: {
