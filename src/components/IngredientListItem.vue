@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  name: "IngredientListItem",
   props: {
     ingredient: {
       type: Array,

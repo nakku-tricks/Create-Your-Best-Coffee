@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  name: "CartListItem",
   props: {
     cartItem: {
       type: Object,

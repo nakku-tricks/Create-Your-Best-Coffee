@@ -60,6 +60,7 @@
 
 <script>
 export default {
+  name: "TheHeader",
   computed: {
     amountItemCart() {
       return this.$store.getters.amountItemCart;
@@ -122,7 +123,7 @@ export default {
     transition: transform 300ms ease;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 

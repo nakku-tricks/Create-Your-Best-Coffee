@@ -14,6 +14,7 @@
 <script>
 import CoffeeListItem from "./CoffeeListItem";
 export default {
+  name: "CoffeeList",
   components: {
     CoffeeListItem,
   },

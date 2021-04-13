@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  name: "CoffeeListItem",
   props: {
     coffee: {
       type: Object,
@@ -144,7 +145,7 @@ export default {
     transition: transform 300ms ease;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
     &:active {

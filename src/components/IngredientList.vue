@@ -18,6 +18,7 @@
 <script>
 import IngredientListItem from "./IngredientListItem";
 export default {
+  name: "IngredientList",
   props: {
     ingredientList: {
       type: Object,

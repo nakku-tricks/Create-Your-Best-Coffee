@@ -7,6 +7,7 @@
 <script>
 import TheMain from "../components/TheMain";
 export default {
+  name: "ViewHome",
   components: {
     TheMain,
   },

@@ -10,6 +10,7 @@
 <script>
 import CartList from "../components/CartList";
 export default {
+  name: "ViewCart",
   components: {
     CartList,
   },

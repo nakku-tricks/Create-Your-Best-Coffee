@@ -21,6 +21,7 @@
 <script>
 import CartListItem from "./CartListItem";
 export default {
+  name: "CartList",
   props: {
     cartList: {
       type: Array,

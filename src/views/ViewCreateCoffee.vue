@@ -35,6 +35,7 @@
 import IngredientList from "../components/IngredientList";
 import BaseInput from "../components/Base/Input";
 export default {
+  name: "ViewCreateCoffee",
   components: {
     IngredientList,
     BaseInput,
