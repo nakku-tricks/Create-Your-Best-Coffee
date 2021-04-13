@@ -7,7 +7,7 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
-      path: "/Coffee",
+      path: "/",
       name: "coffeeList",
       component: ViewCoffee,
     },
