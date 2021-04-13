@@ -45,5 +45,45 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.cart-list {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 -15px;
+  }
+
+  &__button {
+    position: fixed;
+    bottom: 40px;
+    right: 10%;
+
+    width: 150px;
+    height: 50px;
+
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 7px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: transform 300ms ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+}
 </style>

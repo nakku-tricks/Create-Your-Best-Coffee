@@ -18,7 +18,7 @@
         </div>
         <button class="cart-list-item__button" @click="removeItem">
           <svg class="cart-list-item__button-logo">
-            <use xlink:href="../assets/img/sprite.svg#icon-button"></use>
+            <use xlink:href="../assets/img/sprite.svg#icon-close-button"></use>
           </svg>
         </button>
       </div>
@@ -50,7 +50,7 @@ export default {
   width: calc(33.333% - 30px);
   min-height: 500px;
   margin: 0 15px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   &__wrapper {
     display: flex;
@@ -84,7 +84,7 @@ export default {
     height: 100%;
 
     padding: 0 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   &__title {
@@ -99,16 +99,14 @@ export default {
   &__text {
     font-size: 18px;
     margin-bottom: 20px;
-  }
 
-  &__price {
-    font-size: 30px;
+    text-align: center;
   }
 
   &__amount {
-    align-self: flex-end;
-    margin-right: 40px;
     font-size: 24px;
+
+    text-align: center;
   }
 
   &__button {
@@ -123,11 +121,27 @@ export default {
     border: none;
 
     cursor: pointer;
+
+    transition: transform 300ms ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
   }
 
   &__button-logo {
     width: 100%;
     height: 100%;
+
+    fill: #ff3333e0;
   }
 }
 </style>
