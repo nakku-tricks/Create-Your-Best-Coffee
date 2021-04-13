@@ -146,6 +146,7 @@ export default {
   }
 
   &__login-name {
+    font-size: 18px;
     margin-right: 16px;
   }
 
