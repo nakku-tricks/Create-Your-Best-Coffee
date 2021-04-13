@@ -37,11 +37,10 @@ export default {
 .coffee-list {
   &__list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 
-    margin: 0;
     padding: 0;
+    margin: 0 -15px;
   }
 }
 </style>
