@@ -25,7 +25,9 @@
           placeholder="Расскажите, как его приготовить"
           v-model="form.description"
         ></textarea>
-        <button class="view-create-coffee__button">Приготовить!</button>
+        <button type="submit" class="view-create-coffee__button">
+          Приготовить!
+        </button>
       </div>
     </form>
   </section>
@@ -47,8 +49,6 @@ export default {
         title: "",
         description: "",
         ingredients: [],
-        id: 10,
-        amount: 1,
         img: "Espresso.jpg",
       },
     };
@@ -63,9 +63,15 @@ export default {
   },
   methods: {
     submitForm() {
-      this.form.id++;
-      this.$store.dispatch("addCoffeeToCart", this.form);
-      this.$router.push({ name: "coffeeList" });
+      const nanoid = require("nanoid");
+      this.form.id = nanoid(5);
+
+      if (this.form.title && this.form.description) {
+        this.$store.dispatch("addCoffeeToCart", this.form);
+        this.$router.push({ name: "coffeeList" });
+      } else {
+        alert("Заполните, пожалуйста, данные по напитку");
+      }
     },
     inputPrice(value) {
       return (this.form.price = value);
@@ -123,12 +129,6 @@ export default {
     &::placeholder {
       font-size: 15px;
     }
-  }
-
-  &__specification-name {
-  }
-
-  &__specification-title {
   }
 
   &__specification-description {
