@@ -101,6 +101,8 @@ export default {
   &__arrow-logo {
     width: 55px;
     height: 55px;
+
+    fill: $color-title;
   }
 
   &__title {

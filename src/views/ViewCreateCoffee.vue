@@ -110,7 +110,7 @@ export default {
 
   &__specification-input {
     border-radius: 7px;
-    border: 1px solid black;
+    border: 1px solid $blue;
 
     font-size: 20px;
 
@@ -133,7 +133,7 @@ export default {
 
   &__specification-description {
     border-radius: 7px;
-    border: 1px solid black;
+    border: 1px solid $blue;
 
     margin-bottom: 30px;
     padding: 10px 15px;
@@ -157,10 +157,11 @@ export default {
     align-self: center;
 
     border-radius: 7px;
-    border: 1px solid black;
+    border: 1px solid $color-border;
 
     font-size: 20px;
 
+    color: $color-text;
     background-color: #ffffff;
   }
 }

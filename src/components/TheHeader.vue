@@ -41,9 +41,9 @@
         <svg class="the-header__cart-icon">
           <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
         </svg>
-        <span class="the-header__cart-item-count" v-if="amountItemCart !== 0">{{
-          amountItemCart
-        }}</span>
+        <span class="the-header__cart-item-count" v-if="amountItemCart !== 0"
+          >{{ amountItemCart }}
+        </span>
       </router-link>
       <div class="the-header__login">
         <p class="the-header__login-name">Bessie Cooper</p>
@@ -132,12 +132,18 @@ export default {
     height: 60px;
 
     margin-right: 20px;
+
+    fill: $color-title;
   }
 
   &__cart-item-count {
     position: absolute;
     bottom: 4px;
     left: 25px;
+
+    color: $color-title;
+
+    font-weight: bold;
   }
 
   &__login {
