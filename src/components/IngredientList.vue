@@ -50,14 +50,18 @@ export default {
   flex-grow: 2;
 
   &__list {
-    width: calc(25% - 25px);
-    margin-right: 25px;
+    width: calc(28% - 25px);
+    padding: 0 10px;
   }
 
   &__title {
     margin-bottom: 25px;
+
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 24px;
+    text-align: center;
+
+    border-bottom: 1px solid $color-border;
   }
 }
 </style>

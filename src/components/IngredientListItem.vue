@@ -56,11 +56,21 @@ export default {
   }
 
   &__item {
-    font-size: 20px;
+    font-size: 19px;
+    border: 1px solid $color-border;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+
+    transition: transform 300ms ease;
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__label {
     display: block;
+    padding: 5px 10px;
   }
 
   &__checkbox {
