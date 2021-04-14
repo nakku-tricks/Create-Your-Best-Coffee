@@ -75,6 +75,9 @@ export default {
   justify-content: space-between;
   align-items: center;
 
+  max-width: 1900px;
+  width: 100%;
+
   height: 10%;
 
   &__logo {

@@ -146,12 +146,8 @@ export default {
 
     transition: transform 300ms ease;
 
-    &:hover {
-      transform: scale(1.1);
-    }
-
     &:active {
-      transform: scale(1);
+      transform: scale(0.8);
     }
 
     &:focus {

@@ -1,5 +1,5 @@
 <template>
-  <section class="cart-list">
+  <article class="cart-list">
     <ul class="cart-list__list">
       <cart-list-item
         v-for="(item, idx) in cartList"
@@ -15,7 +15,7 @@
     >
       Купить
     </button>
-  </section>
+  </article>
 </template>
 
 <script>
@@ -48,6 +48,8 @@ export default {
 
 <style lang="scss">
 .cart-list {
+  width: 100%;
+  height: 100%;
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -64,7 +66,7 @@ export default {
     height: 50px;
 
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid $color-border;
     border-radius: 7px;
 
     font-size: 20px;

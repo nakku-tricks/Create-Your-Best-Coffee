@@ -52,9 +52,6 @@ export default {
 
 <style lang="scss">
 .ingredient-list-item {
-  &__list {
-  }
-
   &__item {
     font-size: 19px;
     border: 1px solid $color-border;
@@ -71,9 +68,6 @@ export default {
   &__label {
     display: block;
     padding: 5px 10px;
-  }
-
-  &__checkbox {
   }
 }
 </style>

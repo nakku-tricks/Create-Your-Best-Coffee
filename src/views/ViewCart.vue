@@ -1,10 +1,14 @@
 <template>
-  <cart-list
-    :cartList="cartList"
-    @removeItem="removeItem"
-    @postProductsToApi="postProductsToApi"
-  >
-  </cart-list>
+  <section class="view-cart">
+    <cart-list
+      :cartList="cartList"
+      @removeItem="removeItem"
+      @postProductsToApi="postProductsToApi"
+      v-if="cartList.length"
+    >
+    </cart-list>
+    <h2 class="view-cart__notification" v-else>Добавьте товар в корзину</h2>
+  </section>
 </template>
 
 <script>
@@ -32,5 +36,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.view-cart {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__notification {
+    font-size: 50px;
+    align-self: center;
+  }
+}
 </style>

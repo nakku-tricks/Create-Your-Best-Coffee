@@ -19,6 +19,9 @@ export default {
   display: flex;
   flex-direction: column;
 
+  max-width: 1600px;
+  width: 100%;
+
   height: 80%;
 
   margin: 0 25px;
