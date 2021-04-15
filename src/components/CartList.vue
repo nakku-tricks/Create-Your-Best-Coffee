@@ -59,15 +59,17 @@ export default {
 
   &__button {
     position: fixed;
-    bottom: 40px;
-    right: 10%;
+    bottom: 3%;
+    right: 50%;
+
+    margin-right: -75px;
 
     width: 150px;
-    height: 50px;
+    height: 42px;
 
-    background-color: transparent;
+    background-color: $color-border;
     border: 1px solid $color-border;
-    border-radius: 7px;
+    border-radius: 10px;
 
     font-size: 20px;
     text-transform: uppercase;
