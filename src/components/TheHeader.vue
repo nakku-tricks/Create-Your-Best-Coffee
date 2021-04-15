@@ -124,6 +124,10 @@ export default {
     &:hover {
       transform: scale(1.1);
     }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__cart-icon {
