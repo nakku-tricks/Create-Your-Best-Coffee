@@ -18,6 +18,10 @@ h1, h2, h3, h4 {
   color: $color-title;
 }
 
+button {
+  font-family: inherit;
+}
+
 img {
   display: block;
   max-width: 100%;
