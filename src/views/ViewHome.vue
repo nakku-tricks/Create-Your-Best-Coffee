@@ -16,9 +16,6 @@ export default {
 
 <style lang="scss">
 .view-home {
-  display: flex;
-  flex-direction: column;
-
   max-width: 1600px;
   width: 100%;
 
