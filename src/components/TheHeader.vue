@@ -33,11 +33,7 @@
       </router-link>
     </div>
     <div class="the-header__account">
-      <router-link
-        class="the-header__cart"
-        :to="{ name: 'cart' }"
-        v-if="this.$route.name !== 'cart'"
-      >
+      <router-link class="the-header__cart" :to="{ name: 'cart' }">
         <svg class="the-header__cart-icon">
           <use xlink:href="../assets/img/sprite.svg#icon-basket"></use>
         </svg>
