@@ -1,5 +1,6 @@
 <template>
   <section class="view-cart">
+    <slot name="title-cart" v-if="cartList.length"></slot>
     <cart-list
       :cartList="cartList"
       @removeItem="removeItem"
@@ -43,11 +44,10 @@ export default {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   &__notification {
     font-size: 50px;
-    align-self: center;
+    margin: auto;
   }
 }
 </style>

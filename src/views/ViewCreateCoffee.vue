@@ -1,6 +1,6 @@
 <template>
   <section class="view-create-coffee">
-    <h1 class="view-create-coffee__title">Ваш конструктор:</h1>
+    <slot class="view-create-coffee__title" name="title-constructor"></slot>
     <form class="view-create-coffee__form" @submit.prevent="submitForm">
       <ingredient-list
         :ingredientList="ingredientList"
@@ -93,13 +93,6 @@ export default {
 
   height: 100%;
   width: 100%;
-
-  &__title {
-    font-size: 50px;
-
-    margin-bottom: 40px;
-    margin-top: 20px;
-  }
 
   &__form {
     display: flex;

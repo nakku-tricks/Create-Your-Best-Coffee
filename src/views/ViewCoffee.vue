@@ -1,5 +1,8 @@
 <template>
-  <coffee-list :coffeeList="coffeeList" @addToCart="addToCart"></coffee-list>
+  <section class="view-coffee">
+    <slot name="title-coffee-list"></slot>
+    <coffee-list :coffeeList="coffeeList" @addToCart="addToCart"></coffee-list>
+  </section>
 </template>
 
 <script>
@@ -25,5 +28,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
